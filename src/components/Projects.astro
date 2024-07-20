@@ -1,0 +1,142 @@
+---
+import React from "../icons/React.astro";
+import Wordpress from "../icons/Wordpress.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Node from "../icons/Node.astro";
+import Mongodb from "../icons/MongoDB.astro";
+import LinkButton from "./LinkButton.astro";
+import Link from "../icons/Link.astro";
+import Github from "../icons/Github.astro";
+import MaterialUI from "../icons/MaterialUI.astro";
+import GoogleMaps from "../icons/GoogleMaps.astro";
+import Mysql from "../icons/Mysql.astro";
+
+const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-[#58c4dc] text-white",
+    icon: React,
+  },
+  WORDPRESS: {
+    name: "WordPress",
+    class: "bg-blue-800 text-white",
+    icon: Wordpress,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-[#38bdf8] text-white",
+    icon: Tailwind,
+  },
+  NODE: {
+    name: "Node",
+    class: "bg-[#4e9b43] text-white",
+    icon: Node,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-[#023430] text-white",
+    icon: Mongodb,
+  },
+  MATERIALUI: {
+    name: "MaterialUI",
+    class: "bg-red-400 text-white",
+    icon: MaterialUI,
+  },
+  GOOGLEMAPS: {
+    name: "GoogleMaps",
+    class: "bg-[#4285F4] text-white",
+    icon: GoogleMaps,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#00758f] text-white",
+    icon: Mysql,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Gaido's Seaside Inn",
+    description:
+      "Hotel Booking Engine Widget: Designed and Built for WordPress.",
+    link: "https://gaidos-seasideinn.com/",
+    image: "/projects/gaidosinn.webp",
+    tags: [TAGS.REACT, TAGS.MONGODB, TAGS.WORDPRESS, TAGS.TAILWIND, TAGS.NODE],
+  },
+  {
+    title: "Stay Galveston",
+    description:
+      "Booking Engine Widget plus Google Maps Integration: Designed and Built for WordPress.",
+    link: "https://staygalveston.com/rentals",
+    image: "/projects/staygalveston2.webp",
+    tags: [
+      TAGS.REACT,
+      TAGS.MONGODB,
+      TAGS.WORDPRESS,
+      TAGS.MATERIALUI,
+      TAGS.NODE,
+      TAGS.GOOGLEMAPS,
+    ],
+  },
+  {
+    title: "LetMeHelp",
+    description:
+      "Website Designed and Created to Offer Comprehensive Web Solutions, Digital Marketing, and IT Support",
+    link: "https://letmehelp.io",
+    image: "/projects/letmehelp.webp",
+    tags: [TAGS.REACT, TAGS.MYSQL, TAGS.WORDPRESS, TAGS.TAILWIND, TAGS.NODE],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, link, github, image, tags }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 mb-3">
+      <div class="w-full md:w-1/2">
+        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50 mb-3">
+          <img
+            alt="Recién llegado vs 5 años en Nueva Zelanda"
+            class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+            loading="lazy"
+            src={image}
+          />
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/2 md:max-w-lg">
+        <h3 class="text-3xl font-bold text-gray-800 dark:text-gray-100">
+          {title}
+        </h3>
+        <div class="flex flex-wrap mt-3">
+          <ul class="flex flex-wrap mb-2 gap-3">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+          <footer class="flex items-start justify-start mt-4 gap-x-4">
+            {github && (
+              <LinkButton href={github}>
+                <Github class="size-6" />
+                Code
+              </LinkButton>
+            )}
+            {link && (
+              <LinkButton href={link}>
+                <Link class="size-4" />
+                Preview
+              </LinkButton>
+            )}
+          </footer>
+        </div>
+      </div>
+    </article>
+  ))
+}

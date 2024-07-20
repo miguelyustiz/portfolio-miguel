@@ -1,0 +1,54 @@
+---
+import Link from "../icons/Link.astro";
+const pdfPath = "/projects/cv.pdf";
+
+const { title, date, description, latest, link } = Astro.props;
+---
+
+<span
+  class="absolute flex items-center justify-center w-6 h-6 bg-white rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-white"
+>
+  <svg
+    class="w-2.5 h-2.5 text-gray-900 dark:text-gray-900"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+  >
+    <path
+      d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+    ></path>
+  </svg>
+</span>
+<h3
+  class="flex items-center mb-1 ml-10 text-lg lg:text-xl font-semibold text-gray-900 dark:text-red-300"
+>
+  {title}
+  {
+    latest && (
+      <span class="bg-white text-black text-sm font-bold me-2 px-2.5 py-0.5 rounded dark:bg-white/80 dark:text-black ms-3">
+        Latest
+      </span>
+    )
+  }
+</h3>
+<time
+  class="block mb-2 ml-10 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+  >{date}</time
+>
+<p class="mb-4 ml-10 text-base font-normal text-gray-500 dark:text-gray-400">
+  {description}
+</p>
+
+{
+  link && (
+    <a
+      href={pdfPath}
+      download
+      class="inline-flex gap-2 ml-10 mb-4 items-center px-4 py-2 text-md font-bold text-black bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-white dark:text-black dark:border-black dark:hover:text-black dark:hover:bg-gray-300 dark:focus:ring-gray-700"
+    >
+      <Link class="size-4" />
+      Download CV
+    </a>
+  )
+}

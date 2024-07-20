@@ -1,0 +1,36 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    title: "Gaido's Seaside Inn - Web Developer",
+    date: "Released on July, 2024",
+    latest: true,
+    description:
+      "Developed and maintained responsive full-stack web applications with React.js and Node.js, optimizing performance and scalability. Enhanced functionality by integrating third-party services, reducing response time by 40%, and increasing user satisfaction by 25%. Collaborated with design and product teams to deliver projects ahead of schedule, designing intuitive UI/UX interfaces using Adobe Creative Suite and Figma.",
+  },
+  {
+    title: "Nerds To Go - IT Technician",
+    date: "Released on October, 2022",
+    description:
+      "Provided technical support for hardware, software, and network issues, minimizing downtime. Installed and maintained desktops, laptops, printers, and peripherals for optimal functionality. Led an email system overhaul for 300+ employees, enhancing security and reducing unauthorized access by 15%. Designed and built customized, user-friendly websites.",
+  },
+  {
+    title: "LetMeHelp - Web Developer",
+    date: "Project finished on December, 2023",
+    link: "https://letmehelp.io",
+    description:
+      "Worked as a freelance developer on a project, building a customized, user-friendly website for a client. Designed and developed responsive web applications, ensuring optimal performance and user satisfaction. Collaborated with the client to deliver the project on time and according to specifications.Get started with dozens of web components and interactive elements built on top of Tailwind CSS.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-4">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
