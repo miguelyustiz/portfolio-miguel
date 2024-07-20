@@ -6,7 +6,7 @@ import Node from "../icons/Node.astro";
 import Mongodb from "../icons/MongoDB.astro";
 import LinkButton from "./LinkButton.astro";
 import Link from "../icons/Link.astro";
-import Github from "../icons/Github.astro";
+// import Github from "../icons/Github.astro";
 import MaterialUI from "../icons/MaterialUI.astro";
 import GoogleMaps from "../icons/GoogleMaps.astro";
 import Mysql from "../icons/Mysql.astro";
@@ -89,8 +89,8 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ title, description, link, github, image, tags }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 mb-3">
+  PROJECTS.map(({ title, description, link, image, tags }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 lg:mb-3 mb-8">
       <div class="w-full md:w-1/2">
         <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50 mb-3">
           <img
@@ -122,12 +122,12 @@ const PROJECTS = [
 
           <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
           <footer class="flex items-start justify-start mt-4 gap-x-4">
-            {github && (
+            {/* {github && (
               <LinkButton href={github}>
                 <Github class="size-6" />
                 Code
               </LinkButton>
-            )}
+            )} */}
             {link && (
               <LinkButton href={link}>
                 <Link class="size-4" />
