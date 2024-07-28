@@ -1,6 +1,7 @@
 # My Portfolio
 
 Welcome to my portfolio repository! This project showcases my skills and projects as a Web Developer, focusing on user experience, good practices, and solving business challenges.
+I have created the design and coded the entire project myself.
 
 ## Features
 - Responsive Design
@@ -22,5 +23,3 @@ Welcome to my portfolio repository! This project showcases my skills and project
 - **Email:** miguelyustiz97@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/miguelyustiz
 - **Website:** https://miguelyustiz.dev
-
-Thank you for visiting my portfolio!
